@@ -24,7 +24,7 @@ output "deployment_iam_user_access_key" {
 
 output "deployment_iam_user_secret_key" {
   value = module.spa.deployment_iam_user_secret_key
-  # sensitive = true
+  sensitive = true
 }
 
 # S3 Origin

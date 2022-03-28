@@ -28,7 +28,7 @@ provider "aws" {
 provider "aws" {
   region = "us-east-1"
   assume_role {
-    role_arn = "arn:aws:iam::152901669089:role/Jam3DevOpsDNSZoneAdminRole"
+    role_arn = "arn:aws:iam::662365294469:role/terraformRole"
   }
   alias = "jam3devops"
 }
