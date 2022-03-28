@@ -92,13 +92,10 @@ resource "aws_cloudfront_distribution" "default" {
       function_arn = aws_cloudfront_function.default_viewer_request.arn
     }
 
-    dynamic "lambda_function_association" {
-      for_each = var.lambda_security_headers_enabled ? [1] : []
-      content {
-        event_type   = "origin-response"
-        lambda_arn   = module.lambda_default_origin_response.function_arn
-        include_body = false
-      }
+    lambda_function_association {
+      event_type   = "origin-response"
+      lambda_arn   = module.lambda_default_origin_response.function_arn
+      include_body = false
     }
   }
 }
