@@ -1,15 +1,15 @@
 {
   "data": {
     "attributes": {
-      "name": "spa-develop",
+      "name": "paddock-develop",
       "working-directory": "environments/dev",
-      "allow-destroy-plan": true,
+      "allow-destroy-plan": false,
       "auto-apply": true,
       "operations": true,
       "terraform-version": "1.0.11",
       "vcs-repo": {
-        "identifier": "Jam3/devops-aws-spa",
-        "oauth-token-id": "XXXXXXXXXXXXXXX",
+        "identifier": "pressoholics/paddock-devops-dev",
+        "oauth-token-id": "ot-w2E1eHriH7CyDPPU",
         "branch": "develop",
         "default-branch": true
       }

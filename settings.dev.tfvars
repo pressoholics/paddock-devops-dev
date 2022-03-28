@@ -1,10 +1,10 @@
 ### General Settings ###
 region = "us-east-1"
 # Your role_arn is the terraformRole you create via CLI
-role_arn = "arn:aws:iam::740367952415:role/terraformRole"
+role_arn = "arn:aws:iam::662365294469:role/terraformRole"
 # Change to your project name
-name        = "devops-boilerplate"
-namespace   = "jam3"
+name        = "paddock-dev"
+namespace   = "paddock"
 environment = "dev"
 
 ### Custom Domain ###
@@ -27,7 +27,7 @@ cloudfront_price_class         = "PriceClass_All"
 cloudfront_wait_for_deployment = false
 
 ### Notification ###
-alarm_email_address = "marcelo.rodriguez@jam3.com"
+alarm_email_address = "email+paddockdev@benjaminmoody.com"
 
 ### Origin ###
 origin_s3_force_destroy = true

@@ -15,7 +15,7 @@ if [ -x "$(command -v curl)" ]; then
     echo "Please enter your API Token:"
     read token
     echo "Getting oauthToken..."
-    oauthToken=$(curl -s -H "Authorization: Bearer ${token}" -H "Content-Type: application/vnd.api+json" https://app.terraform.io/api/v2/organizations/jam3/oauth-clients | jq '.data[0].relationships."oauth-tokens".data[0].id')
+    oauthToken=$(curl -s -H "Authorization: Bearer ${token}" -H "Content-Type: application/vnd.api+json" https://app.terraform.io/api/v2/organizations/pressoholics/oauth-clients | jq '.data[0].relationships."oauth-tokens".data[0].id')
     if [ "$oauthToken" == "null" ]; then
             echo "An error has occurred, check your API token is valid"
     else
@@ -49,7 +49,7 @@ if [ -x "$(command -v curl)" ]; then
                     '.data.attributes.name = $name | .data.attributes."allow-destroy-plan" = $destroy | .data.attributes."auto-apply" = $apply | .data.attributes."vcs-repo".identifier = $repo | .data.attributes."vcs-repo"."oauth-token-id" = $oauthToken | .data.attributes."vcs-repo".branch = $branch' \
                     tf_workspace_payload.json > "$tmp" && mv "$tmp" tf_workspace_payload.json
                     echo "Creating Workspace..."
-                    workspaceId=$(curl -s -H "Authorization: Bearer $token" -H "Content-Type: application/vnd.api+json" -X POST --data @tf_workspace_payload.json https://app.terraform.io/api/v2/organizations/jam3/workspaces | jq '.data.id ')
+                    workspaceId=$(curl -s -H "Authorization: Bearer $token" -H "Content-Type: application/vnd.api+json" -X POST --data @tf_workspace_payload.json https://app.terraform.io/api/v2/organizations/pressoholics/workspaces | jq '.data.id ')
                     if [ "$workspaceId" == "null" ]; then
                         echo "An error has occurred creating the workspace, please MAKE SURE there is no any other workspace with the same name or repository you entered is correct"
                     else
