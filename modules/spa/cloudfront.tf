@@ -16,7 +16,7 @@ resource "aws_cloudfront_distribution" "default" {
   ]
   wait_for_deployment = var.cloudfront_wait_for_deployment
   enabled             = true
-  is_ipv6_enabled     = false
+  is_ipv6_enabled     = true
   #aliases             = local.use_default_domain ? [local.default_domain_name] : concat([var.cloudfront_domain], var.cloudfront_domain_aliases)
   comment             = module.label.id
   tags                = module.label.tags
