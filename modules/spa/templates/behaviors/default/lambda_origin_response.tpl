@@ -2,7 +2,7 @@
 
 ${securityHeaders} 
 
-exports.handler = async (event) => {
+exports.handler = async (event, context, callback) => {
   const response = securityHeaders(event);
-  return response;
+  callback(null, response);
 }
