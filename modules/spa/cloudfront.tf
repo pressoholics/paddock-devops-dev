@@ -17,7 +17,7 @@ resource "aws_cloudfront_distribution" "default" {
   wait_for_deployment = var.cloudfront_wait_for_deployment
   enabled             = true
   is_ipv6_enabled     = true
-  aliases             = local.use_default_domain ? [local.default_domain_name] : concat([var.cloudfront_domain], var.cloudfront_domain_aliases)
+  #aliases             = local.use_default_domain ? [local.default_domain_name] : concat([var.cloudfront_domain], var.cloudfront_domain_aliases)
   comment             = module.label.id
   tags                = module.label.tags
   price_class         = var.cloudfront_price_class
@@ -46,9 +46,7 @@ resource "aws_cloudfront_distribution" "default" {
   }
 
   viewer_certificate {
-    acm_certificate_arn      = local.use_default_cert ? aws_acm_certificate_validation.cloud_jam3_net.certificate_arn : var.cloudfront_acm_certificate_arn
-    minimum_protocol_version = "TLSv1.2_2021"
-    ssl_support_method       = "sni-only"
+    cloudfront_default_certificate = true
   }
 
   origin {
