@@ -1,0 +1,19 @@
+{
+  "data": {
+    "attributes": {
+      "name": "spa-develop",
+      "working-directory": "environments/dev",
+      "allow-destroy-plan": true,
+      "auto-apply": true,
+      "operations": true,
+      "terraform-version": "1.0.11",
+      "vcs-repo": {
+        "identifier": "Jam3/devops-aws-spa",
+        "oauth-token-id": "XXXXXXXXXXXXXXX",
+        "branch": "develop",
+        "default-branch": true
+      }
+    },
+    "type": "workspaces"
+  }
+}

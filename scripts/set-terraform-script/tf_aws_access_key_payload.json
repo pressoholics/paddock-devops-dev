@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "vars",
+    "attributes": {
+      "key": "AWS_ACCESS_KEY_ID",
+      "value": "XXXXXXXXXXXXX",
+      "description": "AWS Access Key ID",
+      "category": "env",
+      "hcl": false,
+      "sensitive": true
+    }
+  }
+}

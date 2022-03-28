@@ -1,0 +1,13 @@
+{
+  "data": {
+    "type": "vars",
+    "attributes": {
+      "key": "TF_CLI_ARGS_plan",
+      "value": "XXXXXXXXXXXXX",
+      "description": "Points to environment var file",
+      "category": "env",
+      "hcl": false,
+      "sensitive": true
+    }
+  }
+}
